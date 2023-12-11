@@ -1,0 +1,62 @@
+import javax.swing.text.html.parser.TagElement;
+
+public class Student {
+    private String firstName;
+    private String lastName;
+    private String middleName;
+    private int age;
+    private int studentId;
+    private boolean isDeleted;
+
+    public Student() {}
+    public Student(String firstName, String lastName, String middleName, int age, int studentId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.age = age;
+        this.studentId = studentId;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+    public String getMiddleName() {
+        return middleName;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+    public int getStudentId() {
+        return studentId;
+    }
+    public void setIsDeleted(boolean isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+    public boolean getIsDeleted() {
+        return isDeleted;
+    }
+    public static void displayForm() {
+        System.out.println("1. First name");
+        System.out.println("2. Last name");
+        System.out.println("3. Middle name");
+        System.out.println("4. Age");
+        System.out.println("Student ID");
+    }
+}
