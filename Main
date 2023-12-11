@@ -1,0 +1,102 @@
+import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int input = 1;
+        int batchEnroll;
+        int done = 0;
+        int size = 0;
+        int studentID;
+        boolean studentFound = false;
+        int infoInput;
+
+        Student[] student = new Student[5];
+
+
+        while (input != 5) {
+            Menu.display();
+            System.out.println("Enter your choice: ");
+            input = scanner.nextInt();
+            switch (input) {
+                case 1:
+                    System.out.print("Batch Enroll? 1 - Yes/ 2 - No: ");
+                    batchEnroll = scanner.nextInt();
+                    if (batchEnroll == 1) {
+                        while (done != 1) {
+                            scanner.nextLine();
+                            student[size] = new Student();
+                            System.out.println("Enter student details");
+                            System.out.print("First name: ");
+                            student[size].setFirstName(scanner.nextLine());
+                            System.out.print("Last name: ");
+                            student[size].setLastName(scanner.nextLine());
+                            System.out.print("Middle name: ");
+                            student[size].setMiddleName(scanner.nextLine());
+                            System.out.print("Age: ");
+                            student[size].setAge(scanner.nextInt());
+                            System.out.print("Student ID: ");
+                            student[size].setStudentId(scanner.nextInt());
+                            System.out.print("Done? ");
+                            done = scanner.nextInt();
+                            size++;
+                        }
+                    } else {
+                        scanner.nextLine();
+                        student[size] = new Student();
+                        System.out.println("Enter student details");
+                        System.out.print("First name: ");
+                        student[size].setFirstName(scanner.nextLine());
+                        System.out.print("Last name: ");
+                        student[size].setLastName(scanner.nextLine());
+                        System.out.print("Middle name: ");
+                        student[size].setMiddleName(scanner.nextLine());
+                        System.out.print("Age: ");
+                        student[size].setAge(scanner.nextInt());
+                        System.out.print("Student ID: ");
+                        student[size].setStudentId(scanner.nextInt());
+                        size++;
+                    }
+                    break;
+                case 2:
+                    System.out.print("Enter student ID: ");
+                    studentID = scanner.nextInt();
+                    for (int i = 0; i < size; i++) {
+                        if (student[i].getStudentId() == studentID) {
+                            studentFound = true;
+                            studentID = i;
+                            break;
+                        }
+                    }
+                    if (studentFound) {
+                        if (student[studentID].getIsDeleted()) {
+                            System.out.println("Student is already deleted");
+                        } else {
+                            System.out.println("Student deleted");
+                        }
+                    } else {
+                        System.out.println("Student not found");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Update a student");
+                    Student.displayForm();;
+                    System.out.print("Enter info to change: ");
+                    infoInput = scanner.nextInt();
+                    break;
+                case 4:
+                    for(int i = 0; i < size; i++) {
+                        System.out.println("Student " + (i+1));
+                        System.out.println(student[i].getFirstName());
+                        System.out.println(student[i].getLastName());
+                        System.out.println(student[i].getMiddleName());
+                        System.out.println(student[i].getAge());
+                        System.out.println(student[i].getStudentId());
+                        System.out.println();
+                    }
+
+            }
+        }
+    }
+}
