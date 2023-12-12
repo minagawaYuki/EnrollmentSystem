@@ -3,5 +3,14 @@ public class Menu {
         System.out.println("1. Enroll a student");
         System.out.println("2. Delete a student");
         System.out.println("3. Update a student");
+        System.out.println("4. Print all enrolled students");
+        System.out.println("5. Exit");
+    }
+    public static void displayCourses() {
+        System.out.println("1. Civil Engineering");
+        System.out.println("2. Computer Engineering");
+        System.out.println("3. Computer Science");
+        System.out.println("4. Information Technology");
+        System.out.println("5. Multimedia");
     }
 }
